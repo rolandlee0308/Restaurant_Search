@@ -16,5 +16,7 @@ module.exports = {
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
     // Disabled because style prop can be object or string
     'react/style-prop-object': 'off',
+    // fix linebreak errors
+    'linebreak-style': 0,
   },
 };
