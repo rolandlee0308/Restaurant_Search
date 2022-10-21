@@ -18,5 +18,7 @@ module.exports = {
     'react/style-prop-object': 'off',
     // fix linebreak errors
     'linebreak-style': 0,
+    // disable prop validation
+    'react/prop-types': 'off',
   },
 };
