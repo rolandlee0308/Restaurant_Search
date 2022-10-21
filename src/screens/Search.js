@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text } from 'react-native';
+import { Text, ScrollView } from 'react-native';
 import ResultsList from '../components/ResultsList';
 import SearchBar from '../components/SearchBar';
 import useBusinesses from '../hooks/useBusinesses';
@@ -11,17 +11,24 @@ export default function SearchScreen() {
   const filterResultsByPrice = (price) => results.filter((result) => result.price === price);
 
   return (
-    <View>
+    <>
       <SearchBar
         term={term}
         onTermChange={setTerm}
         onTermSubmit={() => searchApi(term)}
       />
       {errMessage && <Text>{errMessage}</Text>}
-      <Text>{results.length}</Text>
-      <ResultsList title="Cost Effective" results={filterResultsByPrice('$')} />
-      <ResultsList title="Bit Pricier" results={filterResultsByPrice('$$')} />
-      <ResultsList title="Big Spender" results={filterResultsByPrice('$$$')} />
-    </View>
+      <ScrollView>
+        <ResultsList title="Cost Effective" results={filterResultsByPrice('$')} />
+        <ResultsList title="Bit Pricier" results={filterResultsByPrice('$$')} />
+        <ResultsList title="Big Spender" results={filterResultsByPrice('$$$')} />
+      </ScrollView>
+    </>
   );
 }
+
+/*
+Resolve oversize content:
+1. use empty tags
+2. use flex 1 property on View
+*/

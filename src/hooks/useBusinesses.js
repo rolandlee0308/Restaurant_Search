@@ -17,7 +17,7 @@ export default function useBusinesses() {
   };
 
   useEffect(() => {
-    searchApi('pasta');
+    searchApi();
   }, []);
 
   return [searchApi, results, errMessage];
