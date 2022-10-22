@@ -31,7 +31,7 @@ export default function ResultsList({ title, results }) {
         data={results}
         keyExtractor={(result) => result.id}
         renderItem={({ item }) => (
-          <TouchableOpacity onPress={() => navigation.navigate('ResultsShow', { id: item.id })}>
+          <TouchableOpacity onPress={() => navigation.navigate('ResultsShow', { id: item.id, name: item.name })}>
             <ResultsDetail result={item} />
           </TouchableOpacity>
         )}

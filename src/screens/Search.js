@@ -9,7 +9,6 @@ export default function SearchScreen() {
   const [searchApi, results, errMessage] = useBusinesses();
 
   const filterResultsByPrice = (price) => results.filter((result) => result.price === price);
-
   return (
     <>
       <SearchBar
